@@ -83,8 +83,8 @@ bool EventHandler::handleEvent(SDL_Event &event) {
 		if (event.wheel.which == SDL_TOUCH_MOUSEID) {
 			break;
 		}
-		const int x = glm::clamp(event.wheel.x, -1, 1);
-		const int y = glm::clamp(event.wheel.y, -1, 1);
+		float x = event.wheel.preciseX * 0.1;
+		float y = event.wheel.preciseY * 0.1;
 		mouseWheel(x, y);
 		break;
 	}
@@ -251,7 +251,7 @@ void EventHandler::foreground() {
 	}
 }
 
-void EventHandler::mouseWheel(int32_t x, int32_t y) {
+void EventHandler::mouseWheel(float x, float y) {
 	for (IEventObserver* observer : _observers) {
 		observer->onMouseWheel(x, y);
 	}

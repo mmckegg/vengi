@@ -8259,7 +8259,7 @@ static void ImGui::TabBarLayout(ImGuiTabBar* tab_bar)
         const ImGuiKey wheel_key = g.IO.MouseWheelRequestAxisSwap ? ImGuiKey_MouseWheelY : ImGuiKey_MouseWheelX;
         if (TestKeyOwner(wheel_key, tab_bar->ID) && wheel != 0.0f)
         {
-            const float scroll_step = wheel * TabBarCalcScrollableWidth(tab_bar, sections) / 3.0f;
+            const float scroll_step = wheel * TabBarCalcScrollableWidth(tab_bar, sections) / 10.0f;
             tab_bar->ScrollingTargetDistToVisibility = 0.0f;
             tab_bar->ScrollingTarget = TabBarScrollClamp(tab_bar, tab_bar->ScrollingTarget - scroll_step);
         }

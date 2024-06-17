@@ -214,7 +214,7 @@ bool WindowedApp::handleKeyPress(int32_t key, int16_t modifier, uint16_t count) 
 	return _keybindingHandler.execute(key, modifier, true, nowSeconds(), count);
 }
 
-bool WindowedApp::onMouseWheel(int32_t x, int32_t y) {
+bool WindowedApp::onMouseWheel(float x, float y) {
 	int32_t key;
 	if (y < 0)
 		key = util::button::CUSTOM_SDLK_MOUSE_WHEEL_UP;
